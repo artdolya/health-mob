@@ -1,0 +1,18 @@
+name: Build Health-mob
+
+on:
+  push:
+    branches: [master]
+
+jobs:
+  build-services:
+    name: Build Flutter App
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Flutter
+        uses: subosito/flutter-action@v2
+        with:
+          flutter-version: "2.5.0"
